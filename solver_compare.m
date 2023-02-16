@@ -1,5 +1,7 @@
 % solve odes
 
+close all;
+
 % y0 = zeros(8,1); % initial conditions
 % y0(7)=10^(-5); %easy to change variables in this way,"Kd"
 % y0(8)=0.0659; %"A"
@@ -45,7 +47,13 @@ y0 = ones(9,1); % initial conditions
 
 figure(1);
 plot(T,Y(:,1),'LineWidth',2)
-ylim([0 2]);
+ylim([0 1.5]);
+xticks(0:12:72);
+xlabel('Zeitgeber Time (hours)','FontSize',18);
+ylabel('$y_1$','FontSize',18,'Interpreter','latex');
+
+ax = gca;
+ax.FontSize = 18;
 
 % %change the translation of the light function
 % y0(9)=30; %the translation of the ft function
