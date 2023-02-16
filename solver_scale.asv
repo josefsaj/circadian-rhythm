@@ -1,0 +1,8 @@
+% solve odes
+A=1;
+Kd=10^(-6);
+y0 = [1,1,1,A,Kd]; % initial conditions
+[T,Y] = ode45(@rhs_scale,[0,240],y0);
+
+figure;
+plot(T,Y(:,1)) %repressor as time
