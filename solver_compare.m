@@ -47,13 +47,21 @@ y0 = ones(9,1); % initial conditions
 
 figure(1);
 plot(T,Y(:,1),'LineWidth',2)
-ylim([0 1.5]);
+ylim([-0.1 1.5]); xlim([0 72]);
 xticks(0:12:72);
 xlabel('Zeitgeber Time (hours)','FontSize',18);
 ylabel('$y_1$','FontSize',18,'Interpreter','latex');
 
 ax = gca;
 ax.FontSize = 18;
+
+numDays = 3; counter = 1; j = 1;
+while counter<numDays+1
+    rectangle('Position',[12*(j-1) -0.1 12 0.1]);
+    rectangle('Position',[12*j -0.1 12 0.1],'FaceColor', 'k');
+    counter = counter+1;
+    j = j+2;
+end
 
 % %change the translation of the light function
 % y0(9)=30; %the translation of the ft function
