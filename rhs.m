@@ -1,4 +1,4 @@
-function dydt = rhs(t,y)
+function dydt = rhs(t,y,alpha1)
 
 dydt = zeros(8,1);
 
@@ -40,7 +40,7 @@ dydt = zeros(8,1);
 % Bruh
 
 % parameters
-alpha1 = 0.1;
+
 A = 0.0659;
 Kd = 1e-5;
 beta1 = 0.4631;
