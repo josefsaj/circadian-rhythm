@@ -4,7 +4,7 @@ y0 = zeros(8,1); % initial conditions
 y0(7)=10^(-5); %easy to change variables in this way,"Kd"
 y0(8)=0.0659; %"A"
 
-[T,Y] = ode45(@rhs,[0,72],y0);
+[T,Y] = ode45(@(t,y) rhs(t,y,0.5),[0,72],y0);
 
 figure(1);
 y1 = Y(:,1);
@@ -26,7 +26,7 @@ Alist=[10^(-5),10^(-4),10^(-3),10^(-2),10^(-1)];
 figure(2);
 for A = Alist
     y0(7)=A;
-    [T,Y] = ode45(@rhs,[0,72],y0);
+    [T,Y] = ode45(@(t,y) rhs(t,y,0.5),[0,72],y0);
     y1 = Y(:,1);
     plot(T,y1);
     hold on;
@@ -69,7 +69,7 @@ figure(5);
 plot3(Y(:,1), Y(:,2), Y(:,3));
 
 y0 = ones(8,1); % initial conditions
-[T,Y] = ode45(@rhs,[0,70],y0);
+[T,Y] = ode45(@(t,y) rhs(t,y,0.5),[0,70],y0);
 
 figure(6);
 plot(T,Y(:,1))
