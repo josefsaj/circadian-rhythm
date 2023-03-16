@@ -11,6 +11,8 @@ alpha1_vec = linspace(alpha1_start,alpha1_end,m);
 
 x_vec = zeros(n,m); % initialize matrix of solutions
 lambda = zeros(n,m); % initialize matrix of eigenvalues
+peak=zeros(m); %initialize array of peak
+mins=zeros(m); %initialize array of mins 
 
 % initial guess
 x0 = ones(n,1);
@@ -21,7 +23,6 @@ for i=1:m
     [x,fval,exitflag,output,jacobian] = fsolve(@(y) rhs(0,y,alpha1), x0);
     x_vec(:,i) = x; % save equilibrium solution
     x0 = x; % set new x0 for next iteration
-
     lambda(:,i) = eig(jacobian); % save eigenvalues of jacobian
 end
 
@@ -32,10 +33,11 @@ plot(alpha1_vec,x_vec(1,:),'-x','LineWidth',2);
 xlabel('$p$','FontSize',18,'Interpreter','latex');
 ylabel('$y_1$','FontSize',18,'Interpreter','latex');
 ax = gca; ax.FontSize = 18;
+hold on;
 
 subplot(2,1,2);
 plot(alpha1_vec,max(real(lambda)),'-x','LineWidth',2);
 xlabel('$p$','FontSize',18,'Interpreter','latex');
 ylabel('$\max(Re(\lambda))$','FontSize',18,'Interpreter','latex');
 ax = gca; ax.FontSize = 18;
-
+hold on;
