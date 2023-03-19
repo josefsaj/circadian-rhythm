@@ -26,18 +26,23 @@ for i=1:m
     lambda(:,i) = eig(jacobian); % save eigenvalues of jacobian
 end
 
+% find index of alpha_1
+index = find(abs(alpha1_vec-0.1579) < 0.001);
+
 % plot results
 figure;
 subplot(2,1,1);
-plot(alpha1_vec,x_vec(1,:),'-x','LineWidth',2);
+plot(alpha1_vec(1:4),x_vec(1,1:4),'-bo','LineWidth',2);
+hold on;
+plot(alpha1_vec(5:20),x_vec(1,5:20), ':bo', 'LineWidth', 2);
 xlabel('$p$','FontSize',18,'Interpreter','latex');
 ylabel('$y_1$','FontSize',18,'Interpreter','latex');
 ax = gca; ax.FontSize = 18;
 hold on;
 
 subplot(2,1,2);
-plot(alpha1_vec,max(real(lambda)),'-x','LineWidth',2);
-xlabel('$p$','FontSize',18,'Interpreter','latex');
+plot(alpha1_vec,max(real(lambda)),'-o','LineWidth',2);
+xlabel('$alpha_1$','FontSize',18,'Interpreter','latex');
 ylabel('$\max(Re(\lambda))$','FontSize',18,'Interpreter','latex');
 ax = gca; ax.FontSize = 18;
 hold on;
