@@ -4,7 +4,7 @@ y0 = zeros(8,1); % initial conditions
 y0(7)=10^(-5); %easy to change variables in this way,"Kd"
 y0(8)=0.0659; %"A"
 
-[T,Y] = ode45(@(t,y) rhs(t,y,0.05),[0,72],y0);
+[T,Y] = ode45(@(t,y) rhs(t,y,0.25),[0,72],y0);
 
 figure(1);
 y1 = Y(:,1);
