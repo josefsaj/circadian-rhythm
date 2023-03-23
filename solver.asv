@@ -1,5 +1,3 @@
-close all;
-clear;
 % solve odes
 
 y0 = zeros(8,1); % initial conditions
@@ -75,26 +73,6 @@ y0 = ones(8,1); % initial conditions
 
 figure(6);
 plot(T,Y(:,1))
-
-y0 = zeros(9,1); % initial conditions
-y0(7)=10^(-5); %easy to change variables in this way,"Kd"
-y0(8)=0.0659; %"A"
-y0(9)=10; %the translation of the ft function
-
-[T,Y] = ode45(@rhs_sq,[0,24*10],y0);
-
-figure(7);
-y1 = Y(:,1);
-plot(T,y1); 
-hold on;
-light = T;
-for i = 1:length(T)
-    light(i)=sq(T(i),y0(9));
-end
-plot(T,light);
-legend("y_1","light");
-xlabel('hours');
-
 
 
 
