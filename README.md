@@ -27,7 +27,7 @@ can simply press the *Run* play button within the matlab window after making and
 
 `p_continuation.m` and `bifurcation.m` are the two files that are associated with the Hopf birfurcation analysis at a single parameter, `alpha1`. These two files can be compiled and run independent of `rhs.m`, `rhs_ft.m`, and 
 `solver.m`. `p_continuation.m` consists of the numerical continuation scheme in one parameter, `alpha1`, so that we can understand the influence of the parameter on the dynamics of the system, which can be behavior such as: does
-the solution graph oscillate, does the solution converge to a stable equlibrium point, etc. `bifurcation.m`plots the minimum and maximum values of the solutions visualize the Hopf bifurcation. It is required that the user runs 
+the solution graph oscillate, does the solution converge to a stable equlibrium point, etc. `bifurcation.m` plots the minimum and maximum values of the solutions visualize the Hopf bifurcation. It is required that the user runs 
 `p_continuation.m` first before running `bifurcation.m` to view desired results. The user may not modify any content of these two files.
 
 ## Integrate with your tools
@@ -45,7 +45,7 @@ Biological composition in our case is the ratio of different elements in the sys
 it is known that when the period of time a rat is exposed to light is longer than the usual 12 hours that most living organisms are used to, it causes the rats to be active at different times, which affects their circadian rhythm. Visualizing the dynamics of the system will allow us to generate expected data that can be used 
 as comparisions in experimentation as well. 
 
-Refer to (https://pubmed.ncbi.nlm.nih.gov/23212247/) and (https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008340) for more information.
+Refer to [KimForger](https://pubmed.ncbi.nlm.nih.gov/23212247/) and [YaoTyson](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008340) for more information.
 
 ## Visuals
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
@@ -59,7 +59,7 @@ Running solver.m:
 If the user wishes to look at the output of the solution of the system of ODE's without the light function, they can do the following: 
 
 1) Make changes to the right input file - rhs.m is the file where the parameters and the system of equations don't include the light function. Block comment parameters associated with behavior you don't want to see. For example:
-![("C:\Users\psark\Pictures\Screenshot 2023-03-27 122151.png")]
+![Screenshot of rhs.m]("C:\Users\psark\Pictures\Screenshot 2023-03-27 122151.png")
 
 
 ## Support
