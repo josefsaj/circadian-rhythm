@@ -16,7 +16,7 @@ There will be a total of 5 files that the user can compile and run, 3 of which a
 
 `rhs.m` and `rhs_ft.m` are the two files which include the parameters necessary to produce solutions that stablize to equilibrium and solutions that stabilize to a limit cycle (a solution with oscillatory behavior).
 `rhs.m` is the file of parameter inputs for the system that doesn't have a light function forcing it, our baseline system. `rhs_ft.m` is the file where parameters and the system of differential equations make use of
-the sinosudal light function. Note that changes to these files must only be block commenting the parameters that associate with a certain behavoir. For example, if the user wishes to view the stable equlibrium solution
+the sinosudal light function. Note that changes to these files must only be block commenting the parameters that associate with a certain behavior. For example, if the user wishes to view the stable equlibrium solution
 of the baseline model, then in `rhs.m`, they should block comment the parameters under the comment *"parameter for stable limit cycle solution"* and uncomment the parameters under the comment *"stable equilibrium solution."* 
 Do not make any changes to the equations at the bottom of both files, and do not uncomment the middle block with header comment *"Stable Limit Cycle."* Make sure to compile before running the driver file associated with it, 
 `solver.m`.
@@ -36,20 +36,23 @@ the solution graph oscillate, does the solution converge to a stable equlibrium 
 
 ***
 
-## Visualizing the Dynamics of Periodic and Aperiodic Oscillatory Dynamics in a Circadian Model
-
 ## Description
 Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-The goal of this project is to mathmatically model circadian rhythms and identify parameters and initial conditions of the model that give us different behavior. Examples of behavior we are interested in are: stable oscillatory behavior, transient behavior, aperiodic and quasiperiodic behavior. 
-Mathematical modelling a stable system will allow us to understand what quanity of biological comppsition will produce stable circadian rhythm of such behaviors allows scientists to detect characteristics of a living organism's circadian rhythm that can cause abnormalities. For example, in humans,  
+The goal of this project is to mathematically model circadian rhythms and identify parameters and initial conditions of the model that give us different behavior. Examples of behavior we are interested in are: stable oscillatory behavior, transient behavior, aperiodic and quasiperiodic behavior. We also want to mimic
+the circadian rhythm of living organisms to the best of our abilites, so that involves creating a forcing light function since the circadian rhythms of living organ
+As of now, our project proficently observes the stable oscillatory behavior, equilibrium behavior, and  
+Mathematical modelling a stable system will allow us to understand what quantity of biological composition will produce stable circadian rhythm. Biological composition in our case is the ratio of different elements in the system such as activator, prepressor protein, mRNA, etc. 
+Also, the mathematical modelling of such behaviors will also allow scientists to detect characteristics of a living organism's circadian rhythm that can cause abnormalities. For example, it is known that when the period of time a rat is exposed to light is longer than the usual 12 hours that most living organisms
+are used to, it causes the rats to be active at different times, which affects their circadian rhythm. Visualizing the dynamics of the system will allow us to generate expected data that can be used as comparisions in experimentation as well. 
+
+Refer to (https://pubmed.ncbi.nlm.nih.gov/23212247/) and (https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008340) for more information.
 
 ## Visuals
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
 ## Installation
 Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
 
 ## Usage
 Running solver.m: 
@@ -71,9 +74,6 @@ existing model as well and see if our observations align with prexisting evidenc
 
 ## Authors and acknowledgment
 Contributors: Ruby Kim, Jackie Song, Josef Sajonz, Kalinda Yu, Anna Kaplan, Phoebe Sarker
-
-## License
-For open source projects, say how it is licensed.
 
 ## Project status
 Currently working on visualizing the dynamics of the system with a square light function.
