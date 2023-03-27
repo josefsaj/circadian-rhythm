@@ -6,6 +6,18 @@
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
+## Running Instructions
+
+There will be a total of 5 files that the user can compile and run, 3 of which are driver files: rhs.m, rhs_ft.m, solver.m, p_continuation.m, and bifurcation.m.
+Rhs.m and rhs_ft.m are the two files which include the parameters necessary to produce solutions that stablize to equilibrium and solutions that stabilize to a limit cycle (a solution with oscillatory behavior).
+Rhs.m is the file of parameter inputs for the system that doesn't have a light function forcing it, our baseline system. Rhs_ft.m is the file where parameters and the system of differential equations make use of
+the sinosudal light function. Note that changes to these files must only be block commenting the parameters that associate with a certain behavoir. For example, if the user wishes to view the stable equlibrium solution
+of the baseline model, then in rhs.m, they should block comment the parameters under the comment "stable limit cycle" and uncomment the parameters under the comment "stable equilibrium solution." Do not make any changes
+to the equations at the bottom of both files. Make sure to compile before running the driver file associated with it, solver.m.
+As for the driver files, they are: solver.m, p_continuation.m, and bifurcation.m. Solver.m produces nominal model solutions, which include solutions to the baseline system of ODE's with original parameters,
+solution of ODE's with the sinosudal light function, solutions with time course of variables
+
+
 ## Add your files
 
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
@@ -61,7 +73,7 @@ Depending on what you are making, it can be a good idea to include screenshots o
 
 ## Installation
 Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-# Mac OS
+
 
 ## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.

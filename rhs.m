@@ -40,7 +40,7 @@ dydt = zeros(8,1);
 % Aperiodic Oscillations
 % Bruh
 
-% parameters
+% parameters for stable limit cycle solution
 
 A = 0.0659;
 Kd = 1e-5;
