@@ -9,11 +9,13 @@ To make it easy for you to get started with GitLab, here's a list of recommended
 ## Running Instructions
 
 There will be a total of 5 files that the user can compile and run, 3 of which are driver files: rhs.m, rhs_ft.m, solver.m, p_continuation.m, and bifurcation.m.
+
 Rhs.m and rhs_ft.m are the two files which include the parameters necessary to produce solutions that stablize to equilibrium and solutions that stabilize to a limit cycle (a solution with oscillatory behavior).
 Rhs.m is the file of parameter inputs for the system that doesn't have a light function forcing it, our baseline system. Rhs_ft.m is the file where parameters and the system of differential equations make use of
 the sinosudal light function. Note that changes to these files must only be block commenting the parameters that associate with a certain behavoir. For example, if the user wishes to view the stable equlibrium solution
-of the baseline model, then in rhs.m, they should block comment the parameters under the comment "stable limit cycle" and uncomment the parameters under the comment "stable equilibrium solution." Do not make any changes
-to the equations at the bottom of both files. Make sure to compile before running the driver file associated with it, solver.m.
+of the baseline model, then in rhs.m, they should block comment the parameters under the comment "parameter for stable limit cycle solution" and uncomment the parameters under the comment "stable equilibrium solution." 
+Do not make any changes to the equations at the bottom of both files, and do not uncomment the middle block with header comment "Stable Limit Cycle." Make sure to compile before running the driver file associated with it, 
+solver.m.
 
 As for the driver files, they are: solver.m, p_continuation.m, and bifurcation.m. Solver.m produces nominal model solutions, which include solutions to the baseline system of ODE's with original parameters,
 solution of ODE's with the sinosudal light function, solutions with time course of variables
@@ -78,6 +80,12 @@ Within a particular ecosystem, there may be a common way of installing things, s
 
 ## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Running solver.m: 
+If the user wishes to look at the output of the solution of the system of ODE's without the light function, they can do the following: 
+
+1) Make changes to the right input file - rhs.m is the file where the parameters and the system of equations don't include the light function. Block comment parameters associated with behavior you don't want to see. For example:
+![("C:\Users\psark\Pictures\Screenshot 2023-03-27 122151.png")]
+
 
 ## Support
 Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
