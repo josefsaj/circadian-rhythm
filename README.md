@@ -12,17 +12,20 @@
 
 ## Running Instructions
 
-There will be a total of 5 files that the user can compile and run, 3 of which are driver files: rhs.m, rhs_ft.m, solver.m, p_continuation.m, and bifurcation.m.
+There will be a total of 5 files that the user can compile and run, 3 of which are driver files: `rhs.m`, `rhs_ft.m`, `solver.m`, `p_continuation.m`, and `bifurcation.m`.
 
-Rhs.m and rhs_ft.m are the two files which include the parameters necessary to produce solutions that stablize to equilibrium and solutions that stabilize to a limit cycle (a solution with oscillatory behavior).
-Rhs.m is the file of parameter inputs for the system that doesn't have a light function forcing it, our baseline system. Rhs_ft.m is the file where parameters and the system of differential equations make use of
+`rhs.m` and `rhs_ft.m` are the two files which include the parameters necessary to produce solutions that stablize to equilibrium and solutions that stabilize to a limit cycle (a solution with oscillatory behavior).
+Rhs.m is the file of parameter inputs for the system that doesn't have a light function forcing it, our baseline system. `rhs_ft.m` is the file where parameters and the system of differential equations make use of
 the sinosudal light function. Note that changes to these files must only be block commenting the parameters that associate with a certain behavoir. For example, if the user wishes to view the stable equlibrium solution
-of the baseline model, then in rhs.m, they should block comment the parameters under the comment "parameter for stable limit cycle solution" and uncomment the parameters under the comment "stable equilibrium solution." 
+of the baseline model, then in `rhs.m`, they should block comment the parameters under the comment "parameter for stable limit cycle solution" and uncomment the parameters under the comment "stable equilibrium solution." 
 Do not make any changes to the equations at the bottom of both files, and do not uncomment the middle block with header comment "Stable Limit Cycle." Make sure to compile before running the driver file associated with it, 
-solver.m.
+`solver.m`.
 
-As for the driver files, they are: solver.m, p_continuation.m, and bifurcation.m. Solver.m produces nominal model solutions, which include solutions to the baseline system of ODE's with original parameters,
-solution of ODE's with the sinosudal light function, solutions with time course of variables
+As for the driver files, they are: `solver.m`, `p_continuation.m`, and `bifurcation.m`. `solver.m` produces nominal model solutions, which include solutions to the baseline system of ODE's with original parameters,
+solution of ODE's with the sinosudal light function, solutions with time course of variables. At runtime, there will be seven different graphs outputted to the screen. The user need not make any changes in this file,
+can simply press the *Run* play button within the matlab window after making and compiling their changes (if any were made) in the `rhs.m` or `rhs_ft.m` files.
+
+`p_continuation.m` and `bifurcation.m` are the two files that are associated with the Hopf birfurcation anal
 
 ## Integrate with your tools
 
