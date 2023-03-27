@@ -1,4 +1,4 @@
-# Circadian 
+# Visualizing the Dynamics of Periodic and Aperiodic Oscillatory Dynamics in a Circadian Model
 
 
 
@@ -34,15 +34,6 @@ the solution graph oscillate, does the solution converge to a stable equlibrium 
 
 - [ ] [Set up project integrations](https://gitlab.eecs.umich.edu/logm/wn23/circadian-rhythms/circadian/-/settings/integrations)
 
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-
 ***
 
 ## Visualizing the Dynamics of Periodic and Aperiodic Oscillatory Dynamics in a Circadian Model
@@ -50,17 +41,18 @@ the solution graph oscillate, does the solution converge to a stable equlibrium 
 ## Description
 Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-The goal of this project is to look at existing models of circadian rhythms and identify parameters and initial conditions of the model that give us a stable system. 
+The goal of this project is to mathmatically model circadian rhythms and identify parameters and initial conditions of the model that give us different behavior. Examples of behavior we are interested in are: stable oscillatory behavior, transient behavior, aperiodic and quasiperiodic behavior. 
+Mathematical modelling a stable system will allow us to understand what quantity of biological composition will produce stable circadian rhythm. Biological composition in our case is the ratio of different elements in the system such as activator, prepressor protein, mRNA, etc. 
+Also, the mathematical modelling of such behaviors will also allow scientists to detect characteristics of a living organism's circadian rhythm that can cause abnormalities. For example, it is known that when the period of time a rat is exposed to light is longer than the usual 12 hours that most living organisms
+are used to, it causes the rats to be active at different times, which affects their circadian rhythm. Visualizing the dynamics of the system will allow us to generate expected data that can be used as comparisions in experimentation as well. 
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Refer to (https://pubmed.ncbi.nlm.nih.gov/23212247/) and (https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008340) for more information.
 
 ## Visuals
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
 ## Installation
 Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
 
 ## Usage
 Running solver.m: 
@@ -79,13 +71,6 @@ In the future, we would like to observe what happens to circadian rhythms when l
 the daytime versus the nighttime. Light with different behavior would be turning off and on a light switch, where there is either total exposure to light or entirely no exposure to light. Living organisms that would experience this type of change in light are 
 living organisms in a lab setting, where light can be controlled in such a manner, and there is evidence with existing models that the rhythms behave quite differently compared to gradually being exposed to light. We would like to study these effects with our 
 existing model as well and see if our observations align with prexisting evidence.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
 ## Authors and acknowledgment
 Contributors: Ruby Kim, Jackie Song, Josef Sajonz, Kalinda Yu, Anna Kaplan, Phoebe Sarker
