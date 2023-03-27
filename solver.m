@@ -1,14 +1,15 @@
 close all;
 clear;
-% solve odes
+
+% solve odes without any light function 
 
 y0 = zeros(8,1); % initial conditions
-y0(7)=10^(-5); %easy to change variables in this way,"Kd"
-y0(8)=0.0659; %"A"
+y0(7)=10^(-5); % easy to change variables in this way,"Kd"
+y0(8)=0.0659; % "A"
 
 [T,Y] = ode45(@(t,y) rhs(t,y,0.25),[0,72],y0);
 
-figure(1);
+figure('Name','Solutions to System of ODEs w/o Light Function');
 y1 = Y(:,1);
 y2 = Y(:,2);
 y3 = Y(:,3);
@@ -20,12 +21,13 @@ legend("y_1","y_2","y_3","y_4","y_5","repressors");
 xlabel('hours') 
 ylabel('concentration') 
 
-% solve odes
 
+% solve odes with different values of activator A
 y0 = zeros(8,1); % initial conditions
 y0(8)=0.0659;
 Alist=[10^(-5),10^(-4),10^(-3),10^(-2),10^(-1)];
-figure(2);
+figure('Name',['Solutions to System of ODEs with Different Values of ' ...
+    'Activator A']);
 for A = Alist
     y0(7)=A;
     [T,Y] = ode45(@(t,y) rhs(t,y,0.5),[0,72],y0);
@@ -37,27 +39,16 @@ xlabel('hours')
 ylabel('concentration of y_1 (A)') 
 legend("10^{-5}","10^{-4}","10^{-3}","10^{-2}","10^{-1}");
 
-figure(3);
+% solve odes with sinosudal light function
 y0 = zeros(9,1); % initial conditions
-y0(7)=10^(-5); %easy to change variables in this way,"Kd"
-y0(8)=0.0659; %"A"
-y0(9)=10; %the translation of the ft function
+y0(7)=10^(-5); % easy to change variables in this way,"Kd"
+y0(8)=0.0659; % "A"
+y0(9)=10; % the translation of the ft function
 
 [T,Y] = ode45(@rhs_ft,[0,72],y0);
 
-figure(3);
-y1 = Y(:,1);
-plot(T,y1); 
-hold on;
-light=ft(T,y0(9));
-plot(T,light);
-legend("y_1","light");
-xlabel('hours');
-
-%change the translation of the light function
-y0(9)=30; %the translation of the ft function
-[T,Y] = ode45(@rhs_ft,[0,72],y0);
-figure(4);
+% graph of the solution y1 using the sinosudal light function
+figure('Name','Solution of y_1 ODE with Sinosudal Light Function');
 y1 = Y(:,1);
 plot(T,y1); 
 hold on;
@@ -67,7 +58,21 @@ legend("y_1","light");
 xlabel('hours');
 
 
-figure(5);
+% change the translation of the light function
+y0(9)=30; % the translation of the ft function
+[T,Y] = ode45(@rhs_ft,[0,72],y0);
+figure('Name',['Solution of y_1 ODE with Right Shifted ' ...
+    'Sinosudal Light Function']);
+y1 = Y(:,1);
+plot(T,y1); 
+hold on;
+light=ft(T,y0(9));
+plot(T,light);
+legend("y_1","light");
+xlabel('hours');
+
+% graph of the limit cycle
+figure('Name','Solution of ODE Converging to Limit Cycle');
 plot3(Y(:,1), Y(:,2), Y(:,3));
 
 y0 = ones(8,1); % initial conditions
@@ -76,14 +81,16 @@ y0 = ones(8,1); % initial conditions
 figure(6);
 plot(T,Y(:,1))
 
+% solve odes with square light function
 y0 = zeros(9,1); % initial conditions
-y0(7)=10^(-5); %easy to change variables in this way,"Kd"
-y0(8)=0.0659; %"A"
-y0(9)=10; %the translation of the ft function
+y0(7)=10^(-5); % easy to change variables in this way,"Kd"
+y0(8)=0.0659; % "A"
+y0(9)=10; % the translation of the ft function
 
 [T,Y] = ode45(@rhs_sq,[0,24*10],y0);
 
-figure(7);
+% graph of the solution y1 using the square light function
+figure('Name','Solution of ODE with Square Light Function');
 y1 = Y(:,1);
 plot(T,y1); 
 hold on;

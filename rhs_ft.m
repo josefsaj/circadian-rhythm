@@ -1,3 +1,4 @@
+% defining the differential equation function 
 function dydt = rhs_ft(t,y)
 
 dydt = zeros(9,1);

@@ -1,8 +1,9 @@
+% defining the differential equation function
 function dydt = rhs(t,y,alpha1)
 
 dydt = zeros(8,1);
 
-% Without L(t)
+% Without L(t), the light function
 
 % Stable equilibrium solution
 % alpha1 = 0.1;

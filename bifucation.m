@@ -9,8 +9,8 @@ r=[r1 r2 r3];
 
 % Define the initial condition
 y0 = zeros(8,1); % initial conditions
-y0(7)=10^(-5); %easy to change variables in this way,"Kd"
-y0(8)=0.0659; %"A"
+y0(7)=10^(-5); % easy to change variables in this way,"Kd"
+y0(8)=0.0659; % "A"
 
 % Define the time span and options for ode45
 tspan = [0, 1000];

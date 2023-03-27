@@ -11,8 +11,8 @@ alpha1_vec = linspace(alpha1_start,alpha1_end,m);
 
 x_vec = zeros(n,m); % initialize matrix of solutions
 lambda = zeros(n,m); % initialize matrix of eigenvalues
-peak=zeros(m); %initialize array of peak
-mins=zeros(m); %initialize array of mins 
+peak=zeros(m); % initialize array of peak
+mins=zeros(m); % initialize array of mins 
 
 % initial guess
 x0 = ones(n,1);
