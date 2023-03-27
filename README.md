@@ -8,7 +8,7 @@
 
 - Locate the Clone dropdown icon and copy the link under the header that says "Clone with HTTPS"
 - Navigate to your terminal to where you want the repo to live and type: git clone *paste copied link here*
-- Launch MATLAB from terminal with the following command: '''matlab .'''
+- Launch MATLAB from terminal with the following command: `matlab .`
 
 ## Running Instructions
 
