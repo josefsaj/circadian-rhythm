@@ -14,6 +14,7 @@ Rhs.m is the file of parameter inputs for the system that doesn't have a light f
 the sinosudal light function. Note that changes to these files must only be block commenting the parameters that associate with a certain behavoir. For example, if the user wishes to view the stable equlibrium solution
 of the baseline model, then in rhs.m, they should block comment the parameters under the comment "stable limit cycle" and uncomment the parameters under the comment "stable equilibrium solution." Do not make any changes
 to the equations at the bottom of both files. Make sure to compile before running the driver file associated with it, solver.m.
+
 As for the driver files, they are: solver.m, p_continuation.m, and bifurcation.m. Solver.m produces nominal model solutions, which include solutions to the baseline system of ODE's with original parameters,
 solution of ODE's with the sinosudal light function, solutions with time course of variables
 
