@@ -26,7 +26,7 @@ solution of ODE's with the sinosudal light function, solutions with time course 
 can simply press the *Run* play button within the matlab window after making and compiling their changes (if any were made) in the `rhs.m` or `rhs_ft.m` files.
 
 `p_continuation.m` and `bifurcation.m` are the two files that are associated with the Hopf birfurcation analysis at a single parameter, `alpha1`. These two files can be compiled and run independent of `rhs.m`, `rhs_ft.m`, and 
-`solver.m`. `p_continuation.m` consists of the numerical continuation scheme in one parameter, `alpha1`, so that we can understand the influence of the parameter on the dynamics of the system, which can be behavior such as: does
+`solver.m`. `p_continuation.m` consists of the numerical continuation scheme in one parameter, `alpha1`, we use numerical solutions and different values of 'alpha1' so that we can understand the influence of the parameter on the dynamics of the system, which can be behavior such as: does
 the solution graph oscillate, does the solution converge to a stable equlibrium point, etc. `bifurcation.m` plots the minimum and maximum values of the solutions visualize the Hopf bifurcation. 
 It is required to run the 'p_continuation.m' before running 'bifurcation.m', so we can run the bifurcation diagram on the stability diagram given by 'p_continuation.m'.The user may not modify any content of these two files.
 
