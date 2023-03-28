@@ -21,8 +21,8 @@ of the baseline model, then in `rhs.m`, they should block comment the parameters
 Do not make any changes to the equations at the bottom of both files, and do not uncomment the middle block with header comment *"Stable Limit Cycle."* Make sure to compile before running the driver file associated with it, 
 `solver.m`.
 
-As for the driver files, they are: `solver.m`, `p_continuation.m`, and `bifurcation.m`. `solver.m` produces nominal model solutions, which include solutions to the baseline system of ODE's with original parameters,
-solution of ODE's with the sinosudal light function, solutions with time course of variables. At runtime, there will be seven different graphs outputted to the screen. The user need not make any changes in this file,
+As for the driver files, they are: `solver.m`, `p_continuation.m`, and `bifurcation.m`. `solver.m` produces nominal model solutions, which include solutions to the baseline system of ODE's with original parameters, 
+solution of ODE's with the sinosudal light function, solutions with time course of variables. Note nominal means rigid with original parameters, there will be seven different graphs outputted to the screen by using the same parameters. The user need not make any changes in this file,
 can simply press the *Run* play button within the matlab window after making and compiling their changes (if any were made) in the `rhs.m` or `rhs_ft.m` files.
 
 `p_continuation.m` and `bifurcation.m` are the two files that are associated with the Hopf birfurcation analysis at a single parameter, `alpha1`. These two files can be compiled and run independent of `rhs.m`, `rhs_ft.m`, and 
