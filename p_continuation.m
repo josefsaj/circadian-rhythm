@@ -20,10 +20,10 @@ x0 = ones(n,1);
 % loop through values of p
 for i=1:m
     alpha1 = alpha1_vec(i);
-    [x,fval,exitflag,output,jacobian] = fsolve(@(y) rhs(0,y,alpha1), x0); 
-    x_vec(:,i) = x; % save equilibrium solution 
-    x0 = x; % set new x0 for next iteration 
-    lambda(:,i) = eig(jacobian); % save eigenvalues of jacobian 
+    [x,fval,exitflag,output,jacobian] = fsolve(@(y) rhs(0,y,alpha1), x0);
+    x_vec(:,i) = x; % save equilibrium solution
+    x0 = x; % set new x0 for next iteration
+    lambda(:,i) = eig(jacobian); % save eigenvalues of jacobian
 end
 
 % find index of alpha_1
