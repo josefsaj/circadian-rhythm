@@ -1,10 +1,8 @@
 % Define the range of r values
 m = 20; % number of iterations through p
-alpha1_start = 0;
-alpha1_end = 0.8; 
-alpha1_mid_start =0.13;
-alpha1_mid_end=0.2;
-r1 = linspace(alpha1_start,alpha1_mid_start,5);
+alpha1_start = 0; alpha1_end = 0.8; 
+alpha1_mid_start =0.13;alpha1_mid_end=0.2;
+r1 = linspace(alpha1_start,alpha1_mid_start,0);
 r2 = linspace(alpha1_mid_start,alpha1_mid_end,m);
 r3 = linspace(alpha1_mid_end,alpha1_end,m);
 r=[r1 r2 r3];
@@ -24,7 +22,7 @@ xmin = zeros(length(r), 1);
 % Loop through each value of r and solve the differential equation
 for i = 1:length(r)
     [x,fval,exitflag,output,jacobian] = fsolve(@(y) rhs(0,y,r(i)), x0);
-    if max(real(eig(jacobian))) > 0     % if the eige of the Jacomatrix is greater than 0, then the equi solution is unstable, then the last local max and min are found using findpeaks
+    if max(real(eig(jacobian))) > 0
         [t, Y] = ode45(@(t, y) rhs(t, y,r(i)), tspan, y0);
         [pks, locs] = findpeaks(Y(:,1),'MinPeakProminence',1e-1);
         if ~isempty(locs)
@@ -35,7 +33,7 @@ for i = 1:length(r)
             xmin(i) = 0 - pks(end);
         end
     else
-        xmax(i)=x(1);  % if the eigen of the Jaco matrix is less than zero, then the last local maximum and minimum are set to the value of the first element of the equilibrium solution, x(1).
+        xmax(i)=x(1);
         xmin(i)=x(1);
     end
 end
@@ -47,10 +45,8 @@ xmin(xmin == 0) = NaN;
 % Plot the bifurcation diagram
 figure (1); 
 subplot(2,1,1);
-plot(r, xmax, '-o', 'MarkerSize', 10,'LineWidth',2);
+plot(r, xmax, '-o', 'MarkerSize', 10,'LineWidth',2,'color','#77AC30','DisplayName','Last Local Max');
 hold on;
-plot(r, xmin, '-o', 'MarkerSize', 10,'LineWidth',2);
-xlabel('alpha1');
-ylabel('x');
-title('Bifurcation Diagram');
-legend('Last Local Max', 'Last Local Min');
+plot(r, xmin, '-o', 'MarkerSize', 10,'LineWidth',2,'DisplayName','Last Local Min');
+%xlabel('alpha1');
+%ylabel('x');
