@@ -21,19 +21,19 @@ dydt = zeros(9,1);
 
 % Stable limit cycle
 alpha1 = 0.62;
-A = y(9);
-Kd = y(7);
-beta1 = 0.62;
-alpha2 = 0.62;
-beta2 = 0.62;   %% 3D plot variables( plot 3), m effect PC , 3 columns 
-alpha3 = 0.62;
-beta3 = 0.62;
-alpha4 = 0.62;
-beta4 = 0.62;
-alpha5 = 0.62;
-beta5 = 0.62;
-alpha6 = 0.62;
-beta6 = 0.8; %0.62;
+A = 0.0659;
+Kd = 1e-5;
+beta1 = 0.4631;
+alpha2 = 0.4631;
+beta2 = 0.4631;
+alpha3 = 0.4631;
+beta3 = 0.4631;
+alpha4 = 0.4631;
+beta4 = 0.4631;
+alpha5 = 0.4631;
+beta5 = 0.4631;
+alpha6 = 0.4631;
+beta6 = 1;
 
 % % Aperiodic Oscillations
 % % Tis impossible
