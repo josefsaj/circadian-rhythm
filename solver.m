@@ -1,6 +1,9 @@
 close all;
 clear;
-
+set(groot, 'defaultAxesLineWidth', 2.5)
+set(groot, 'defaultAxesFontSize', 20)
+set(groot, 'defaultTextFontSize', 20)
+set(groot, 'defaultLineLineWidth', 2.5)
 % solve odes without any light function 
 
 y0 = zeros(8,1); % initial conditions
@@ -26,7 +29,7 @@ ylabel('concentration')
 y0 = zeros(8,1); % initial conditions
 y0(8)=0.0659;
 Alist=[10^(-5),10^(-4),10^(-3),10^(-2),10^(-1)];
-figure('Name',['Solutions to System of ODEs with Different Values of ' ...
+figure('Name',['Solutions to y_1 with Different Values of ' ...
     'Activator A']);
 for A = Alist
     y0(7)=A;
@@ -75,23 +78,30 @@ xlabel('hours');
 figure('Name','Solution of ODE Converging to Limit Cycle');
 plot3(Y(:,1), Y(:,2), Y(:,3));
 
+%{
 y0 = ones(8,1); % initial conditions
 [T,Y] = ode45(@(t,y) rhs(t,y,0.5),[0,70],y0);
 
+
 figure(6);
 plot(T,Y(:,1))
+%}
 
 % solve odes with square light function
 y0 = zeros(9,1); % initial conditions
 y0(7)=10^(-5); % easy to change variables in this way,"Kd"
 y0(8)=0.0659; % "A"
-y0(9)=10; % the translation of the ft function
+y0(9)=0; % the translation of the ft function
 
-[T,Y] = ode45(@rhs_sq,[0,24*10],y0);
+options = odeset('RelTol', 1e-6, 'AbsTol', 1e-6);
+[T,Y] = ode45(@rhs_sq,[0,20000],y0,options);
+y0=Y(end,:);
+[T,Y] = ode45(@rhs_sq,[0,2000],y0,options);
 
 % graph of the solution y1 using the square light function
 figure('Name','Solution of ODE with Square Light Function');
-y1 = Y(:,1);
+y1 = Y(1:1000,1);
+T=T(1:1000);
 plot(T,y1); 
 hold on;
 light = T;
@@ -101,8 +111,6 @@ end
 plot(T,light);
 legend("y_1","light");
 xlabel('hours');
-
-
-
-
-
+ylabel('value of y_1 and light');
+figure(7);
+plot3(Y(:,1), Y(:,2), Y(:,3));
